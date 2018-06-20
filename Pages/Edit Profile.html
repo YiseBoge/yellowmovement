@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome to The Yellow Movement</title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- css -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/style.css" rel="stylesheet" media="screen">
+  <link href="color/default.css" rel="stylesheet" media="screen">
+  <link href="css/profile.css" rel="stylesheet" media="screen">
+  <style>
+    .inner,#inner{
+      color:white;
+  }
+  #inner  {
+    font-size: 200%;
+  }
+  #nav_ted{
+    padding: 7px;
+    font-size: 108%;
+    font-weight: bolder;
+  }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav  role="navigation" id="nav_ted" style="color:white !important;">
+    <div class="container" id="nav_me">
+      <div class="navbar-header">
+        <!-- Logo text or image -->
+        <a class="navbar-brand" href="index.html"  id="inner">THE YELLOW MOVEMENT</a>
+
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="current"><a href="#intro" class="inner">HOME</a></li>
+          <li><a href="#about" class="inner">ABOUT</a></li>
+          <li><a href="#services" class="inner">SERVICE</a></li>
+          <li><a href="#portfolio" class="inner">WORKS</a></li>
+          <li><a href="#team" class="inner">TEAM</a></li>
+          <li><a href="#bottom-widget" class="inner">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--the profile editing page --->
+  <div class="profile-edit">
+    <div class="inn-edit">
+
+        <div id="username">
+          <p id="headername">User's Name</p>
+        </div>
+
+        <!-- picture place-->
+        <div id="pic-place">
+          <div id="img">
+          </div>
+            <input type="button" value="Insert/change picture" id="chpic"/>
+        </div>
+
+        <!-- form place -->
+        <div id="insert-form">
+          <form action="" method="post">
+            <p class="up">Name:<input type="text" id=fname required="required" placeholder="name here"></p>
+            <p class="up">Email:<input type="email" id="email"required="required" placeholder="a@gmail.com"></p>
+            <div id="sexi">
+                Sex:<input type="radio" name="radClass" value="male" id="wen" class="rad"/>MALE<br/>
+                <input type="radio" name="radClass" value="female" id="sete" class="rad"/>FEMALE</br>
+                <div id="edme">Age:<input type="number" id="age" required="required"></div>
+            </div>
+            <div id="toge">
+                <p id="memclub">Member of the club? &nbsp; &nbsp; &nbsp; &nbsp;
+                    <select name=”selYesNo” id="memclubSec">
+                        <option selected=”selected” class="cluM" value=””> Yes </option>
+                        <option value=”red” class="cluM"> No </option>
+                    </select>
+                </p>
+                <p id="ocup">Occupation: &nbsp;
+                    <select name="occp">
+                        <option selected="Student" value="student">student</option>
+                        <option value="TeachingStuff">Teaching Stuff</option>
+                        <option value="Other">Other(specify)</option>
+                    </select>
+                </p>
+           </div>
+            <input type="button" value="Done" id="done"/>
+          </form>
+
+        </div>
+
+        <div id="currentRole">
+            <p id="current-role">Current Role: User</p>
+            <a href="#">Blogging request sent</a>
+        </div>
+        <!--password place -->
+        <div id="password-chenger">
+          <form  action="index.html" method="post">
+                <p class="passkal">Old Password:<input type="password" require="required" id="oldpass"></p>
+                <p class="passkal">New Password:<input type="password" required="required" id="newpass"></p>
+                <p class="passkal">Confirm : &nbsp;&nbsp;&nbsp; <input type="password" required="required" id="confirm" ></p>
+                <input type="button" value="change" id="change" >
+
+          </form>
+
+        </div>
+
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Copyright &copy; Yellow Movement. All rights reserved.</p>
+          <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Alstar
+            -->
+            Based on design by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
