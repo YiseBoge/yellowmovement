@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en">
@@ -123,3 +124,121 @@
   </body>
 
 </html>
+=======
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Registration</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min2.css" rel="stylesheet">
+    <script src ="form_validator.js"></script>
+      
+  <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.--><script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/bubbler-one:n4:default;lobster-two:n4:default;aguafina-script:n4:default.js" type="text/javascript"></script>
+</head>
+
+  <body style="overflow : hidden; ">
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container"><a class="navbar-brand" href="#">YELLOW MOVEMENT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+        <form onsubmit="return empty_check()">
+            <p class="topic">New Account</p>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputfname">Name</label>
+                  <input type="text" class="form-control" id="inputfname" placeholder="Name" >
+                </div>
+                
+             
+             
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password"  onkeyup="passwordChecker()">
+                <p id = "passwordMessage"> </p>
+              </div>
+              <div class="form-group col-md-6" height = "100px">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" onblur="ValidateEmail()" >
+                <p id = "emailMessage"> </p>
+              </div>
+              
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword4" placeholder="confirm Password" onblur="checkPass()" >
+              </div>
+              </div>
+              <div class="form-group col-md-6">
+              <label for="inputState">Sex</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <p id = "confirmMessage"> </p>
+              <div class="form-group col-md-6">
+              <button type="submit" class="btn btn-primary">Sign in</button>
+              </div>
+              
+              
+             
+              
+            </div>
+           
+          </form> 
+    </div>    
+
+   
+
+   
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Yellow Movement. All rights reserved.</p>
+        <div class="credits m-0 text-center text-white">
+            Based on design by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+      </div> 
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
+>>>>>>> 59963d09cd2c7831a5e4226035167b483b77f19b
