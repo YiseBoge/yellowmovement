@@ -14,6 +14,9 @@ function name_check(){
 
    
 }
+
+
+}
 function email_check(){
     var goodColor = "#ffb";
     var badColor = "#ff6666";
@@ -151,18 +154,20 @@ function checkPass()
               }
               function stringlength()
               { 
-                  var field = document.getElementById("").value; 
+                  var field = document.getElementById("exampleFormControlTextarea1").value; 
                   var mnlen = 0;
-                  var mxlen = 1000;
-              
+                  var mxlen = 256;
+                  var message = document.getElementById("postMessage");
                   if(field.length<mnlen || field.length> mxlen)
                   { 
-                  
+                    message.innerHTML ="post is not in the range of 0 - 500 letters ";
+                    message.style.color = "#ff6666";
                   return false;
                   }
                   else
                   { 
-                  
+                    message.innerHTML ="";
+                   
                   return true;
                   }
               }
@@ -190,4 +195,22 @@ function checkPass()
                        return false;
                        }
                     }
-            
+                    function fileValidation(){
+                        var fileInput = document.getElementById('inputImage');
+                        var filePath = fileInput.value;
+                        var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+                        if(!allowedExtensions.exec(filePath)){
+                            alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+                            fileInput.value = '';
+                            return false;
+                        }else{
+                            //Image preview
+                            if (fileInput.files && fileInput.files[0]) {
+                                var reader = new FileReader();
+                                reader.onload = function(e) {
+                                   document.getElementById('imagePreview').innerHTML = '<img src="'+e.target.result+'"/>';
+                                };
+                                reader.readAsDataURL(fileInput.files[0]);
+                            }
+                        }
+                    }
