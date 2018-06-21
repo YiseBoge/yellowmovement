@@ -1,6 +1,5 @@
-
 function name_check(){
-    var goodColor = "#ffb";
+    var goodColor = "#0000A0";
     var badColor = "#ff6666";
     if(inputfname.value.length == 0 ){
         inputfname.style.borderColor = badColor;
@@ -14,11 +13,23 @@ function name_check(){
 
    
 }
+function input_check(){
+    var goodColor = "#0000A0";
+    var badColor = "#ff6666";
+    if(inputText.value.length == 0 ){
+        inputText.style.borderColor = badColor;
+        inputText.placeholder = "This field can not be empty! ";
+        return false;
+    }
+    else{
+        inputText.style.borderColor = goodColor;
+        return true
+    }
 
 
 }
 function email_check(){
-    var goodColor = "#ffb";
+    var goodColor = "#0000A0";
     var badColor = "#ff6666";
     if(inputEmail4.value.length == 0 ){
         inputEmail4.style.borderColor = badColor;
@@ -33,7 +44,7 @@ function email_check(){
    
 }
 function password_check(){
-    var goodColor = "#ffb";
+    var goodColor = "#0000A0";
     var badColor = "#ff6666";
     if(inputPassword.value.length == 0 ){
         inputPassword.style.borderColor = badColor;
@@ -48,7 +59,7 @@ function password_check(){
    
 }
 function confirm_check(){
-    var goodColor = "#ffb";
+    var goodColor = "#0000A0";
     var badColor = "#ff6666";
     if(confirmPassword4.value.length == 0 ){
         confirmPassword4.style.borderColor = badColor;
@@ -62,14 +73,14 @@ function confirm_check(){
 
    
 }
+
 function empty_check(){
     name_check();
-    password_check();
-    confirm_check();
     email_check();
+    confirm_check();
+    password_check();
+    return false;
 }
-
-
 
 function checkPass()
       {
@@ -78,7 +89,7 @@ function checkPass()
           //Store the Confimation Message Object ...
           var message = document.getElementById('confirmMessage');
           //Set the colors we will be using ...
-          var goodColor = "#66cc66";
+          var goodColor = "#0000A0";
           var badColor = "#ff6666";
           //Compare the values in the password field 
           //and the confirmation field
@@ -96,12 +107,13 @@ function checkPass()
           }else{
             inputPassword.style.borderColor = goodColor;
             confirmPassword4.style.borderColor = goodColor;
+            message.innerHTML = "";
             return true;
           }
       }
 
       function ValidateEmail()
-      {   var goodColor = "#66cc66";
+      {   var goodColor = "#0000A0";
           var badColor = "#ff6666";
           var message = document.getElementById("emailMessage");
           var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -154,20 +166,43 @@ function checkPass()
               }
               function stringlength()
               { 
-                  var field = document.getElementById("exampleFormControlTextarea1").value; 
+                  var field = document.getElementById("inputText").value; 
                   var mnlen = 0;
-                  var mxlen = 256;
-                  var message = document.getElementById("postMessage");
+                  var mxlen = 1000;
+                  var message = document.getElementById("textMessage");
                   if(field.length<mnlen || field.length> mxlen)
                   { 
-                    message.innerHTML ="post is not in the range of 0 - 500 letters ";
-                    message.style.color = "#ff6666";
+                  message.style.color = "#ff6666";
+                  message.innerHTML = "text does not full fill the criteria "
                   return false;
                   }
                   else
                   { 
-                    message.innerHTML ="";
-                   
+                  
+                  return true;
+                  }
+              }
+              function topicstringlength()
+              { 
+                  var field = document.getElementById("inputText").value; 
+                  var mnlen = 5;
+                  var mxlen = 50;
+                  var message = document.getElementById("textMessage");
+                  if(field.length<mnlen  )
+                  { 
+                    message.style.color = "#ff6666";
+                    message.innerHTML = " Text too small";
+                  return false;
+                  }
+                  else if(field.length> mxlen){
+                    message.style.color = "#ff6666";
+                    message.innerHTML = "Text too big ";
+                  return false;
+                  }
+                  
+                  else
+                  { 
+                    message.innerHTML = " "
                   return true;
                   }
               }
@@ -195,22 +230,198 @@ function checkPass()
                        return false;
                        }
                     }
-                    function fileValidation(){
-                        var fileInput = document.getElementById('inputImage');
-                        var filePath = fileInput.value;
-                        var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-                        if(!allowedExtensions.exec(filePath)){
-                            alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
-                            fileInput.value = '';
-                            return false;
-                        }else{
-                            //Image preview
-                            if (fileInput.files && fileInput.files[0]) {
-                                var reader = new FileReader();
-                                reader.onload = function(e) {
-                                   document.getElementById('imagePreview').innerHTML = '<img src="'+e.target.result+'"/>';
-                                };
-                                reader.readAsDataURL(fileInput.files[0]);
-                            }
-                        }
-                    }
+// function name_check(){
+//     var goodColor = "#ffb";
+//     var badColor = "#ff6666";
+//     if(inputfname.value.length == 0 ){
+//         inputfname.style.borderColor = badColor;
+//         inputfname.placeholder = "Name is required";
+//         return false;
+//     }
+//     else{
+//         inputfname.style.borderColor = goodColor;
+//         return true
+//     }
+
+   
+// }
+// function email_check(){
+//     var goodColor = "#ffb";
+//     var badColor = "#ff6666";
+//     if(inputEmail4.value.length == 0 ){
+//         inputEmail4.style.borderColor = badColor;
+//         inputEmail4.placeholder = "Email is required";
+//         return false;
+//     }
+//     else{
+//         inputEmail4.style.borderColor = goodColor;
+//         return true
+//     }
+
+   
+// }
+// function password_check(){
+//     var goodColor = "#ffb";
+//     var badColor = "#ff6666";
+//     if(inputPassword.value.length == 0 ){
+//         inputPassword.style.borderColor = badColor;
+//         inputPassword.placeholder = "Password is required";
+//         return false;
+//     }
+//     else{
+//         inputPassword.style.borderColor = goodColor;
+//         return true
+//     }
+
+   
+// }
+// function confirm_check(){
+//     var goodColor = "#ffb";
+//     var badColor = "#ff6666";
+//     if(confirmPassword4.value.length == 0 ){
+//         confirmPassword4.style.borderColor = badColor;
+//         confirmPassword4.placeholder = "password confirmation is required ";
+//         return false;
+//     }
+//     else{
+//         confirmPassword4.style.borderColor = goodColor;
+//         return true
+//     }
+
+   
+// }
+// function empty_check(){
+//     name_check();
+//     password_check();
+//     confirm_check();
+//     email_check();
+// }
+
+
+
+// function checkPass()
+//       {
+//           //Store the password field objects into variables ...
+          
+//           //Store the Confimation Message Object ...
+//           var message = document.getElementById('confirmMessage');
+//           //Set the colors we will be using ...
+//           var goodColor = "#66cc66";
+//           var badColor = "#ff6666";
+//           //Compare the values in the password field 
+//           //and the confirmation field
+//           if(inputPassword.value != confirmPassword4.value){
+//             inputPassword.style.borderColor = badColor;
+//             confirmPassword4.style.borderColor = badColor;
+//             inputPassword.placeholder = "";
+//             confirmPassword4.placeholder = "";
+//             message.style.color = badColor;
+//             message.innerHTML = "password does not match";
+//             return false;
+
+              
+              
+//           }else{
+//             inputPassword.style.borderColor = goodColor;
+//             confirmPassword4.style.borderColor = goodColor;
+//             return true;
+//           }
+//       }
+
+//       function ValidateEmail()
+//       {   var goodColor = "#66cc66";
+//           var badColor = "#ff6666";
+//           var message = document.getElementById("emailMessage");
+//           var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//           if(inputEmail4.value.match(mailformat))
+//           {   message.innerHTML = "";
+//               inputEmail4.placeholder = "Email";
+//               inputEmail4.style.borderColor = "#000";
+//               return true;
+//           }
+//           else
+//           {
+//           message.innerHTML = "Invalid Email Address!";
+//           message.style.color = badColor;
+//           inputEmail4.placeholder = "Invalid Email Address !";
+//           inputEmail4.style.borderColor = badColor;
+//           return false;
+//           }
+//       }
+
+//       function passwordChecker() {
+//                 // Validate lowercase letters
+//                 var lowerCaseLetters = /[a-z]/g;
+//                 var upperCaseLetters = /[A-Z]/g;
+//                 var numbers = /[0-9]/g;
+//                 var message = document.getElementById("passwordMessage");
+                
+//                   if (!inputPassword.value.match(/[a-z]/)) {
+//                     message.innerHTML ="Must contain a Small letter";
+//                     message.style.color = "#ff6666";
+//                     return false;  }
+//                   if (!inputPassword.value.match(/[A-Z]/)) {
+//                     message.innerHTML ="Must contain a Capital letter";
+//                     message.style.color = "#ff6666";
+//                     return false;  }
+//                   if (!inputPassword.value.match(/[0-9]/)) {
+//                     message.innerHTML ="Must contain a Number";
+//                     message.style.color = "#ff6666";
+//                     return false;  }
+//                   if (inputPassword.value.length<12) {
+//                     message.innerHTML ="Password too short";
+//                     message.style.color = "#ff6666";
+//                     return false;  }
+//                     if(inputPassword.value.match(lowerCaseLetters) && inputPassword.value.match(upperCaseLetters) && inputPassword.value.match(numbers)) { 
+//                         message.innerHTML = "";
+//                         return true;
+//                     }
+              
+                
+                
+//               }
+//               function stringlength()
+//               { 
+//                   var field = document.getElementById("exampleFormControlTextarea1").value; 
+//                   var mnlen = 0;
+//                   var mxlen = 500;
+//                   var message = document.getElementById("postMessage");
+//                   if(field.length<mnlen || field.length> mxlen)
+//                   { 
+//                     message.innerHTML ="post is not in the range of 0 - 500 letters ";
+//                     message.style.color = "#ff6666";
+//                   return false;
+//                   }
+//                   else
+//                   { 
+//                     message.innerHTML ="";
+                   
+//                   return true;
+//                   }
+//               }
+//               function allnumeric()
+//                     {
+//                        var numbers = /^[0-9]+$/;
+//                        var message = document.getElementById("ageMessage");
+//                        if(inputAge.value.match(numbers))
+//                        {
+//                         if(inputAge.value >127){
+//                             message.innerHTML = "Age out of bound exception";
+//                             message.style.color = "#ff6666";
+//                            return false
+//                         }
+//                         message.innerHTML = "";
+//                        return true;
+//                        }
+                        
+
+                       
+//                        else
+//                        {
+//                        message.innerHTML = "Invalid age";
+//                        message.style.color = "#ff6666";
+//                        return false;
+//                        }
+//                     }
+                   
+                    
